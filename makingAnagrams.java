@@ -1,10 +1,7 @@
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+import java.util.HashMap;
 import java.util.Map.Entry;
-public class Solution {
+import java.util.Scanner;
+public class makingAnagram {
   
   
     public static void main(String[] args) {
@@ -12,6 +9,7 @@ public class Solution {
         String a = in.next();
         String b = in.next();
         System.out.println(numberNeeded(a, b));
+        in.close();
     }
     
     
@@ -32,7 +30,8 @@ public class Solution {
 				hm.put(second.charAt(i),hm.get(second.charAt(i))-1);
 			}
 		}
-        Set<Entry<Character, Integer>> entrySet = hm.entrySet();
+      // Set<Entry<Character, Integer>> entrySet = hm.entrySet();
+		
 		for(Entry<Character,Integer> entry:hm.entrySet()){
 			if(entry.getValue()!=0){
 				count+=Math.abs(entry.getValue());
